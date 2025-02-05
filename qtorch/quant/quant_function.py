@@ -284,3 +284,6 @@ def float_quantize(x, exp, man, rounding="stochastic"):
     elif rounding == "stochastic":
         out = quant_module.float_quantize_stochastic(x.contiguous(), man, exp)
     return out
+
+def set_seed(seed):
+    return quant_cuda.set_seed(seed)
